@@ -15,19 +15,14 @@ class Spark(unittest.TestCase):
                 c=str(res1.status_code)
                 print(href1+"-----"+c)
                 
-                # time.sleep(1)
         def homelink(element,val,n):
             href=element.get_attribute('href')
-            # val=str(val)
-            time.sleep(1)
-            # driver.execute_script("window.scrollTo(0,"+val+")") 
-            # time.sleep(n)
+            time.sleep(1)            
             res=requests.get(href)
             if(res.status_code==200):
                 b=str(res.status_code)
                 print(href+"-----"+b)
-                # element.click()
-                # time.sleep(1)
+                
 
         driver=self.driver
 
@@ -56,11 +51,12 @@ class Spark(unittest.TestCase):
         print("Slider displayed -----"+str(slider.is_displayed()))
 
         print("\n Home Page tested Succesfully")
-    # def test_aboutus(self):
     def test_aboutus(self):
         driver=self.driver
         abt=driver.find_element_by_xpath("//*[@id='link-effect-3']/ul/li[1]/a")
         guiding_pri=driver.find_element_by_xpath("//*[@id='link-effect-3']/ul/li[1]/ul/li[2]/a")
+        #Actionchains is used to perform the actions stored in the queue.
+        #When you call perform(), the events are fired in the order they are queued up.
         action=ActionChains(driver)
         action.move_to_element(abt).click().move_to_element(guiding_pri).click()
         action.perform()
@@ -85,7 +81,6 @@ class Spark(unittest.TestCase):
         contact.send_keys("abcd200@gmail.com")
         time.sleep(1)
         time.sleep(1)
-        # Select by visible text
         action1=ActionChains(driver)
         role=driver.find_element_by_xpath("/html/body/div[2]/div/div[2]/div[2]/div/form/select")
         opt=driver.find_element_by_xpath("/html/body/div[2]/div/div[2]/div[2]/div/form/select/option[3]")
