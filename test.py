@@ -53,6 +53,8 @@ class Spark(unittest.TestCase):
         print("\n Home Page tested Succesfully")
     def test_aboutus(self):
         driver=self.driver
+        driver.maximize_window()
+
         abt=driver.find_element_by_xpath("//*[@id='link-effect-3']/ul/li[1]/a")
         guiding_pri=driver.find_element_by_xpath("//*[@id='link-effect-3']/ul/li[1]/ul/li[2]/a")
         #Actionchains is used to perform the actions stored in the queue.
@@ -64,6 +66,8 @@ class Spark(unittest.TestCase):
         print("\n About us Tested Successfully")
     def test_findus(self):
         driver=self.driver
+        driver.maximize_window()
+
         join=driver.find_element_by_xpath("//*[@id='link-effect-3']/ul/li[5]/a")
         why_join=driver.find_element_by_xpath("//*[@id='link-effect-3']/ul/li[5]/ul/li[1]/a")
         action=ActionChains(driver)
@@ -95,6 +99,7 @@ class Spark(unittest.TestCase):
 
     def test_policy_page(self):
         driver=self.driver
+        driver.maximize_window()
         pol=driver.find_element_by_xpath("//*[@id='link-effect-3']/ul/li[2]/a")
         pol1=driver.find_element_by_xpath("//*[@id='link-effect-3']/ul/li[2]/ul/li[2]/a")
 
@@ -110,6 +115,7 @@ class Spark(unittest.TestCase):
 
     def test_contact_us(self):
         driver=self.driver
+        driver.maximize_window()
         contac=driver.find_element_by_xpath('//*[@id="link-effect-3"]/ul/li[6]/a')
         contac.click()
         title=driver.find_element_by_xpath('/html/body/div[2]/div/h3')
@@ -128,6 +134,7 @@ class Spark(unittest.TestCase):
         
     def test_programs(self):
         driver=self.driver
+        driver.maximize_window()
         prog=driver.find_element_by_xpath('//*[@id="link-effect-3"]/ul/li[3]/a')
         prog1=driver.find_element_by_xpath('//*[@id="link-effect-3"]/ul/li[3]/ul/li[2]/a')
         href1=prog1.get_attribute('href')
